@@ -1,0 +1,15 @@
+<!doctype html>
+<html data-ng-app="autocomplete">
+	<head>
+		<title>Autocomplete module test</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
+		<script src="js/autocomplete.js"></script>
+		<link href='https://fonts.googleapis.com/css?family=Actor' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="css/autocomplete.css">
+	</head>
+	<body>
+		<div ng-controller="Load">
+			<input type="text" id="input1" qnd-autocomplete url="https://api.github.com/users/google/repos"/>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,10 @@
+<div>
+	<div ng-transclude></div>
+	<div>
+		<ul>
+			<li ng-repeat="item in items" ng-class="{active:item.selected}">
+				<a href="" ng-click="select(pane)">{{item.name}}</a>
+			</li>
+		</ul>
+	</div>
+</div>
