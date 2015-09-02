@@ -8,7 +8,7 @@ function($http) {
 		scope : {
 			src : "@url"		},
 		link : function(scope, element, attrs, ctrl, transclude) {
-			scope.addToSelectedTags = function(tag) {
+			scope.select = function(tag) {
 				element.find("input").val(tag);
 			};
 			element.find("input").on('focus', function() {
