@@ -1,12 +1,4 @@
 var ac = angular.module('autocomplete', []);
-ac.controller('Load', ['$scope', '$http',
-function($scope, $http) {
-	$scope.data = ["lucio", "nunez"];
-	$scope.customer = {
-		name : 'Naomi',
-		address : '1600 Amphitheatre'
-	};
-}]);
 ac.directive('qndAutocomplete', ['$http',
 function($http) {
 	return {
@@ -14,23 +6,18 @@ function($http) {
 		transclude : "element",
 		templateUrl : "templates/autocomplete.html",
 		scope : {
-			src : "@url"
-		},
+			src : "@url"		},
 		link : function(scope, element, attrs, ctrl, transclude) {
-
-			console.debug(transclude());
-			transclude(function(clone) {
-				var pTag = angular.element(clone);
-				console.debug(pTag);
-
+			scope.addToSelectedTags = function(tag) {
+				element.find("input").val(tag);
+			};
+			element.find("input").on('focus', function() {
+				element.addClass('qnd-focus');
 			});
-
-			element.on('focus', function() {
-				element.addClass('focus');
-				console.debug("focuuu");
-			});
-			element.on('blur', function(event) {
-				console.debug(elem);
+			element.find("input").on('blur', function(event) {
+				setTimeout(function() {
+					element.removeClass('qnd-focus');
+				}, 500);
 			});
 			element.on('keyup', function(event) {
 				element.addClass("active");

@@ -8,8 +8,8 @@
 		<link rel="stylesheet" href="css/autocomplete.css">
 	</head>
 	<body>
-		<div ng-controller="Load">
-			<input type="text" id="input1" qnd-autocomplete url="https://api.github.com/users/google/repos"/>
+		<div>
+			<input type="text" id="input1" data-ng-model="value" qnd-autocomplete url="https://api.github.com/users/google/repos"/>
 		</div>
 	</body>
 </html>

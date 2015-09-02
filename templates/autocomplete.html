@@ -1,9 +1,9 @@
-<div>
-	<div ng-transclude></div>
-	<div>
+<div class="qnd-autocomplete">
+	<div class="qnd-input-container" ng-transclude></div>
+	<div class="qnd-list-container">
 		<ul>
-			<li ng-repeat="item in items" ng-class="{active:item.selected}">
-				<a href="" ng-click="select(pane)">{{item.name}}</a>
+			<li ng-repeat="item in items">
+				<a ng-click="addToSelectedTags(item.name)">{{item.name}}</a>
 			</li>
 		</ul>
 	</div>
